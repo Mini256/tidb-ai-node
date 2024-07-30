@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({
@@ -10,7 +10,7 @@ const client = new TidbAI({
 
 describe('resource chatEngines', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.admins.chatEngines.create({ fast_llm_id: 0, llm_id: 0, name: 'name' });
+    const responsePromise = client.admin.chatEngines.create({ fast_llm_id: 0, llm_id: 0, name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,7 +21,7 @@ describe('resource chatEngines', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await client.admins.chatEngines.create({
+    const response = await client.admin.chatEngines.create({
       fast_llm_id: 0,
       llm_id: 0,
       name: 'name',
@@ -35,7 +35,7 @@ describe('resource chatEngines', () => {
   });
 
   test('retrieve', async () => {
-    const responsePromise = client.admins.chatEngines.retrieve(0);
+    const responsePromise = client.admin.chatEngines.retrieve(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -47,13 +47,13 @@ describe('resource chatEngines', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admins.chatEngines.retrieve(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.admin.chatEngines.retrieve(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
   });
 
   test('update', async () => {
-    const responsePromise = client.admins.chatEngines.update(0, {});
+    const responsePromise = client.admin.chatEngines.update(0, {});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -64,7 +64,7 @@ describe('resource chatEngines', () => {
   });
 
   test('list', async () => {
-    const responsePromise = client.admins.chatEngines.list();
+    const responsePromise = client.admin.chatEngines.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -76,7 +76,7 @@ describe('resource chatEngines', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admins.chatEngines.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.admin.chatEngines.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
   });
@@ -84,12 +84,12 @@ describe('resource chatEngines', () => {
   test('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.admins.chatEngines.list({ page: 1, size: 1 }, { path: '/_stainless_unknown_path' }),
+      client.admin.chatEngines.list({ page: 1, size: 1 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(TidbAI.NotFoundError);
   });
 
   test('delete', async () => {
-    const responsePromise = client.admins.chatEngines.delete(0);
+    const responsePromise = client.admin.chatEngines.delete(0);
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -101,7 +101,7 @@ describe('resource chatEngines', () => {
 
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admins.chatEngines.delete(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.admin.chatEngines.delete(0, { path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
   });

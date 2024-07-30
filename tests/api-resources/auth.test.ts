@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({
@@ -9,21 +9,6 @@ const client = new TidbAI({
 });
 
 describe('resource auth', () => {
-  test('createAPIKey: only required params', async () => {
-    const responsePromise = client.auth.createAPIKey({ description: 'description' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  test('createAPIKey: required and optional params', async () => {
-    const response = await client.auth.createAPIKey({ description: 'description' });
-  });
-
   test('login: only required params', async () => {
     const responsePromise = client.auth.login({ password: 'password', username: 'username' });
     const rawResponse = await responsePromise.asResponse();

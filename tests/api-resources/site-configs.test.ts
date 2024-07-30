@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({
@@ -8,9 +8,9 @@ const client = new TidbAI({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource feedbacks', () => {
+describe('resource siteConfigs', () => {
   test('list', async () => {
-    const responsePromise = client.admins.feedbacks.list();
+    const responsePromise = client.siteConfigs.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,15 +22,8 @@ describe('resource feedbacks', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admins.feedbacks.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.siteConfigs.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
-  });
-
-  test('list: request options and params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.admins.feedbacks.list({ page: 1, size: 1 }, { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(TidbAI.NotFoundError);
   });
 });

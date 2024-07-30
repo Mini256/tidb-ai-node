@@ -34,11 +34,13 @@ export namespace Graph {
   export import GraphSearchResponse = GraphAPI.GraphSearchResponse;
   export import GraphSearchParams = GraphAPI.GraphSearchParams;
   export import Entities = EntitiesAPI.Entities;
+  export import EntityPublic = EntitiesAPI.EntityPublic;
   export import EntitySearchResponse = EntitiesAPI.EntitySearchResponse;
   export import EntitySubgraphResponse = EntitiesAPI.EntitySubgraphResponse;
   export import EntityUpdateParams = EntitiesAPI.EntityUpdateParams;
   export import EntitySearchParams = EntitiesAPI.EntitySearchParams;
   export import EntitySynopsisParams = EntitiesAPI.EntitySynopsisParams;
   export import Relationships = RelationshipsAPI.Relationships;
+  export import RelationshipPublic = RelationshipsAPI.RelationshipPublic;
   export import RelationshipUpdateParams = RelationshipsAPI.RelationshipUpdateParams;
 }

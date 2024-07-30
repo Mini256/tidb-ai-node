@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({
@@ -10,7 +10,7 @@ const client = new TidbAI({
 
 describe('resource siteSettings', () => {
   test('update: only required params', async () => {
-    const responsePromise = client.admins.siteSettings.update('setting_name', { value: 'string' });
+    const responsePromise = client.admin.siteSettings.update('setting_name', { value: 'string' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,11 +21,11 @@ describe('resource siteSettings', () => {
   });
 
   test('update: required and optional params', async () => {
-    const response = await client.admins.siteSettings.update('setting_name', { value: 'string' });
+    const response = await client.admin.siteSettings.update('setting_name', { value: 'string' });
   });
 
   test('list', async () => {
-    const responsePromise = client.admins.siteSettings.list();
+    const responsePromise = client.admin.siteSettings.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -37,7 +37,7 @@ describe('resource siteSettings', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admins.siteSettings.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.admin.siteSettings.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
   });

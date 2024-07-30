@@ -9,14 +9,14 @@ export class ChatEngines extends APIResource {
   /**
    * Create Chat Engine
    */
-  create(body: ChatEngineCreateParams, options?: Core.RequestOptions): Core.APIPromise<Chatengine> {
+  create(body: ChatEngineCreateParams, options?: Core.RequestOptions): Core.APIPromise<ChatEngine> {
     return this._client.post('/api/v1/admin/chat-engines', { body, ...options });
   }
 
   /**
    * Get Chat Engine
    */
-  retrieve(chatEngineId: number, options?: Core.RequestOptions): Core.APIPromise<Chatengine> {
+  retrieve(chatEngineId: number, options?: Core.RequestOptions): Core.APIPromise<ChatEngine> {
     return this._client.get(`/api/v1/admin/chat-engines/${chatEngineId}`, options);
   }
 
@@ -27,19 +27,19 @@ export class ChatEngines extends APIResource {
     chatEngineId: number,
     body: ChatEngineUpdateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<Chatengine> {
+  ): Core.APIPromise<ChatEngine> {
     return this._client.put(`/api/v1/admin/chat-engines/${chatEngineId}`, { body, ...options });
   }
 
   /**
    * List Chat Engines
    */
-  list(query?: ChatEngineListParams, options?: Core.RequestOptions): Core.APIPromise<PageChatengine>;
-  list(options?: Core.RequestOptions): Core.APIPromise<PageChatengine>;
+  list(query?: ChatEngineListParams, options?: Core.RequestOptions): Core.APIPromise<PageChatEngine>;
+  list(options?: Core.RequestOptions): Core.APIPromise<PageChatEngine>;
   list(
     query: ChatEngineListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<PageChatengine> {
+  ): Core.APIPromise<PageChatEngine> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -49,12 +49,12 @@ export class ChatEngines extends APIResource {
   /**
    * Delete Chat Engine
    */
-  delete(chatEngineId: number, options?: Core.RequestOptions): Core.APIPromise<Chatengine> {
+  delete(chatEngineId: number, options?: Core.RequestOptions): Core.APIPromise<ChatEngine> {
     return this._client.delete(`/api/v1/admin/chat-engines/${chatEngineId}`, options);
   }
 }
 
-export interface Chatengine {
+export interface ChatEngine {
   fast_llm_id: number | null;
 
   llm_id: number | null;
@@ -74,8 +74,8 @@ export interface Chatengine {
   updated_at?: string | null;
 }
 
-export interface PageChatengine {
-  items: Array<Chatengine>;
+export interface PageChatEngine {
+  items: Array<ChatEngine>;
 
   page: number | null;
 
@@ -125,8 +125,8 @@ export interface ChatEngineListParams {
 }
 
 export namespace ChatEngines {
-  export import Chatengine = ChatEnginesAPI.Chatengine;
-  export import PageChatengine = ChatEnginesAPI.PageChatengine;
+  export import ChatEngine = ChatEnginesAPI.ChatEngine;
+  export import PageChatEngine = ChatEnginesAPI.PageChatEngine;
   export import ChatEngineCreateParams = ChatEnginesAPI.ChatEngineCreateParams;
   export import ChatEngineUpdateParams = ChatEnginesAPI.ChatEngineUpdateParams;
   export import ChatEngineListParams = ChatEnginesAPI.ChatEngineListParams;

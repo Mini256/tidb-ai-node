@@ -119,13 +119,14 @@ export class TidbAI extends Core.APIClient {
     this.apiKey = apiKey;
   }
 
-  index: API.Index = new API.Index(this);
+  healthz: API.Healthz = new API.Healthz(this);
+  siteConfigs: API.SiteConfigs = new API.SiteConfigs(this);
   chats: API.Chats = new API.Chats(this);
   chatMessages: API.ChatMessages = new API.ChatMessages(this);
   users: API.Users = new API.Users(this);
-  auth: API.Auth = new API.Auth(this);
-  admins: API.Admins = new API.Admins(this);
+  apiKeys: API.APIKeys = new API.APIKeys(this);
   admin: API.Admin = new API.Admin(this);
+  auth: API.Auth = new API.Auth(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -185,9 +186,11 @@ export import fileFromPath = Uploads.fileFromPath;
 export namespace TidbAI {
   export import RequestOptions = Core.RequestOptions;
 
-  export import Index = API.Index;
-  export import IndexRetrieveHealthResponse = API.IndexRetrieveHealthResponse;
-  export import IndexRetrieveSiteConfigResponse = API.IndexRetrieveSiteConfigResponse;
+  export import Healthz = API.Healthz;
+  export import HealthzRetrieveResponse = API.HealthzRetrieveResponse;
+
+  export import SiteConfigs = API.SiteConfigs;
+  export import SiteConfigListResponse = API.SiteConfigListResponse;
 
   export import Chats = API.Chats;
   export import PageChat = API.PageChat;
@@ -198,23 +201,19 @@ export namespace TidbAI {
   export import ChatListParams = API.ChatListParams;
 
   export import ChatMessages = API.ChatMessages;
-  export import SubgraphResponse = API.SubgraphResponse;
-  export import ChatMessageFeedbackResponse = API.ChatMessageFeedbackResponse;
-  export import ChatMessageFeedbackParams = API.ChatMessageFeedbackParams;
 
   export import Users = API.Users;
-  export import UserRead = API.UserRead;
 
-  export import Auth = API.Auth;
-  export import AuthCreateAPIKeyResponse = API.AuthCreateAPIKeyResponse;
-  export import AuthLoginResponse = API.AuthLoginResponse;
-  export import AuthLogoutResponse = API.AuthLogoutResponse;
-  export import AuthCreateAPIKeyParams = API.AuthCreateAPIKeyParams;
-  export import AuthLoginParams = API.AuthLoginParams;
-
-  export import Admins = API.Admins;
+  export import APIKeys = API.APIKeys;
+  export import APIKeyCreateResponse = API.APIKeyCreateResponse;
+  export import APIKeyCreateParams = API.APIKeyCreateParams;
 
   export import Admin = API.Admin;
+
+  export import Auth = API.Auth;
+  export import AuthLoginResponse = API.AuthLoginResponse;
+  export import AuthLogoutResponse = API.AuthLogoutResponse;
+  export import AuthLoginParams = API.AuthLoginParams;
 }
 
 export default TidbAI;
