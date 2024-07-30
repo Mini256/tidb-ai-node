@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'tidb-ai/shims/${shims.kind}'\` before importing anything else from tidb-ai`,
+      `you must \`import '@tidb-ai/sdk/shims/${shims.kind}'\` before importing anything else from @tidb-ai/sdk`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'tidb-ai/shims/${shims.kind}'\` after \`import 'tidb-ai/shims/${kind}'\``,
+      `can't \`import '@tidb-ai/sdk/shims/${shims.kind}'\` after \`import '@tidb-ai/sdk/shims/${kind}'\``,
     );
   }
   auto = options.auto;

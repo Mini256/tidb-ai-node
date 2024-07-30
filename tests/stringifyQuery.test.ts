@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { TidbAI } from 'tidb-ai';
+import { TidbAI } from '@tidb-ai/sdk';
 
 const { stringifyQuery } = TidbAI.prototype as any;
 

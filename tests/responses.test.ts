@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'tidb-ai/core';
-import { Headers } from 'tidb-ai/_shims/index';
+import { createResponseHeaders } from '@tidb-ai/sdk/core';
+import { Headers } from '@tidb-ai/sdk/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

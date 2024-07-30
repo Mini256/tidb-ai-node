@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'tidb-ai/core';
-import { Blob } from 'tidb-ai/_shims/index';
-import { toFile } from 'tidb-ai';
+import { multipartFormRequestOptions, createForm } from '@tidb-ai/sdk/core';
+import { Blob } from '@tidb-ai/sdk/_shims/index';
+import { toFile } from '@tidb-ai/sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

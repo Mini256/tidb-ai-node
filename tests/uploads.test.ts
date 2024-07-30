@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'tidb-ai/uploads';
-import { File } from 'tidb-ai/_shims/index';
+import { toFile, type ResponseLike } from '@tidb-ai/sdk/uploads';
+import { File } from '@tidb-ai/sdk/_shims/index';
 
 class MyClass {
   name: string = 'foo';
