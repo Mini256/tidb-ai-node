@@ -1,12 +1,12 @@
 {
-  "name": "@tidb-ai/sdk",
+  "name": "tidb-ai",
   "version": "0.0.1-alpha.1",
   "description": "The official TypeScript library for the Tidb AI API",
   "author": "Tidb AI <dev-feedback@tidb-ai.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:Mini256/tidb-ai-node",
+  "repository": "github:stainless-sdks/tidb-ai-node",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "@tidb-ai/sdk": ".",
-    "@tidb-ai/sdk/*": "./src/*"
+    "tidb-ai": ".",
+    "tidb-ai/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

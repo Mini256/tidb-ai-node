@@ -9,12 +9,12 @@ export class Feedbacks extends APIResource {
   /**
    * List Feedbacks
    */
-  list(query?: FeedbackListParams, options?: Core.RequestOptions): Core.APIPromise<PageAdminfeedbackpublic>;
-  list(options?: Core.RequestOptions): Core.APIPromise<PageAdminfeedbackpublic>;
+  list(query?: FeedbackListParams, options?: Core.RequestOptions): Core.APIPromise<PageAdminFeedbackPublic>;
+  list(options?: Core.RequestOptions): Core.APIPromise<PageAdminFeedbackPublic>;
   list(
     query: FeedbackListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<PageAdminfeedbackpublic> {
+  ): Core.APIPromise<PageAdminFeedbackPublic> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -22,8 +22,8 @@ export class Feedbacks extends APIResource {
   }
 }
 
-export interface PageAdminfeedbackpublic {
-  items: Array<PageAdminfeedbackpublic.Item>;
+export interface PageAdminFeedbackPublic {
+  items: Array<PageAdminFeedbackPublic.Item>;
 
   page: number | null;
 
@@ -34,7 +34,7 @@ export interface PageAdminfeedbackpublic {
   pages?: number | null;
 }
 
-export namespace PageAdminfeedbackpublic {
+export namespace PageAdminFeedbackPublic {
   export interface Item {
     id: number;
 
@@ -67,6 +67,6 @@ export interface FeedbackListParams {
 }
 
 export namespace Feedbacks {
-  export import PageAdminfeedbackpublic = FeedbacksAPI.PageAdminfeedbackpublic;
+  export import PageAdminFeedbackPublic = FeedbacksAPI.PageAdminFeedbackPublic;
   export import FeedbackListParams = FeedbacksAPI.FeedbackListParams;
 }

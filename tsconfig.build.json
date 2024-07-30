@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@tidb-ai/sdk/*": ["dist/src/*"],
-      "@tidb-ai/sdk": ["dist/src/index.ts"],
+      "tidb-ai/*": ["dist/src/*"],
+      "tidb-ai": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -42,25 +42,25 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```bash
-npm install git+ssh://git@github.com:Mini256/tidb-ai-node.git
+npm install git+ssh://git@github.com:stainless-sdks/tidb-ai-node.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```bash
 # Clone
-git clone https://www.github.com/Mini256/tidb-ai-node
+git clone https://www.github.com/stainless-sdks/tidb-ai-node
 cd tidb-ai-node
 
 # With yarn
 yarn link
 cd ../my-package
-yarn link @tidb-ai/sdk
+yarn link tidb-ai
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global @tidb-ai/sdk
+pnpm link -—global tidb-ai
 ```
 
 ## Running tests
@@ -99,7 +99,7 @@ the changes aren't made through the automated pipeline, you may want to make rel
 
 ### Publish with a GitHub workflow
 
-You can release to package managers by using [the `Publish NPM` GitHub action](https://www.github.com/Mini256/tidb-ai-node/actions/workflows/publish-npm.yml). This requires a setup organization or repository secret to be set up.
+You can release to package managers by using [the `Publish NPM` GitHub action](https://www.github.com/stainless-sdks/tidb-ai-node/actions/workflows/publish-npm.yml). This requires a setup organization or repository secret to be set up.
 
 ### Publish manually
 

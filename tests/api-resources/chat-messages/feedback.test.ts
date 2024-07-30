@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({
@@ -8,9 +8,12 @@ const client = new TidbAI({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource users', () => {
-  test('retrieveMe', async () => {
-    const responsePromise = client.users.retrieveMe();
+describe('resource feedback', () => {
+  test('create: only required params', async () => {
+    const responsePromise = client.chatMessages.feedback.create(0, {
+      comment: 'comment',
+      feedback_type: 'like',
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,10 +23,10 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('retrieveMe: request options instead of params are passed correctly', async () => {
-    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.users.retrieveMe({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      TidbAI.NotFoundError,
-    );
+  test('create: required and optional params', async () => {
+    const response = await client.chatMessages.feedback.create(0, {
+      comment: 'comment',
+      feedback_type: 'like',
+    });
   });
 });

@@ -8,9 +8,9 @@ const client = new TidbAI({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource llmOptions', () => {
+describe('resource documents', () => {
   test('list', async () => {
-    const responsePromise = client.admin.llmOptions.list();
+    const responsePromise = client.admin.documents.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,8 +22,15 @@ describe('resource llmOptions', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.admin.llmOptions.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.admin.documents.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       TidbAI.NotFoundError,
     );
+  });
+
+  test('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.admin.documents.list({ page: 1, query: 'query', size: 1 }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(TidbAI.NotFoundError);
   });
 });

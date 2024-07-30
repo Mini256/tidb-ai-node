@@ -1,6 +1,6 @@
 # Tidb AI Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@tidb-ai/sdk.svg)](https://npmjs.org/package/@tidb-ai/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@tidb-ai/sdk)
+[![NPM version](https://img.shields.io/npm/v/tidb-ai.svg)](https://npmjs.org/package/tidb-ai) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/tidb-ai)
 
 This library provides convenient access to the Tidb AI REST API from server-side TypeScript or JavaScript.
 
@@ -11,8 +11,11 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install @tidb-ai/sdk
+npm install git+ssh://git@github.com:stainless-sdks/tidb-ai-node.git
 ```
+
+> [!NOTE]
+> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install tidb-ai`
 
 ## Usage
 
@@ -20,7 +23,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 
 const client = new TidbAI();
 
@@ -37,7 +40,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 
 const client = new TidbAI();
 
@@ -207,12 +210,12 @@ add the following import before your first import `from "TidbAI"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import '@tidb-ai/sdk/shims/web';
-import TidbAI from '@tidb-ai/sdk';
+import 'tidb-ai/shims/web';
+import TidbAI from 'tidb-ai';
 ```
 
-To do the inverse, add `import "@tidb-ai/sdk/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/Mini256/tidb-ai-node/tree/main/src/_shims#readme)).
+To do the inverse, add `import "tidb-ai/shims/node"` (which does import polyfills).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/tidb-ai-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -221,7 +224,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import TidbAI from '@tidb-ai/sdk';
+import TidbAI from 'tidb-ai';
 
 const client = new TidbAI({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {
@@ -271,7 +274,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/Mini256/tidb-ai-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/tidb-ai-node/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as LlmOptionsAPI from './llm-options';
-import * as AdminsLlmOptionsAPI from '../admins/llm-options';
 
 export class LlmOptions extends APIResource {
   /**
@@ -14,8 +13,25 @@ export class LlmOptions extends APIResource {
   }
 }
 
-export type LlmOptionListResponse = Array<AdminsLlmOptionsAPI.LlmOption>;
+export interface LlmOption {
+  credentials_description: string;
+
+  credentials_display_name: string;
+
+  default_model: string;
+
+  model_description: string;
+
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+
+  credentials_type?: string;
+
+  default_credentials?: string | unknown;
+}
+
+export type LlmOptionListResponse = Array<LlmOption>;
 
 export namespace LlmOptions {
+  export import LlmOption = LlmOptionsAPI.LlmOption;
   export import LlmOptionListResponse = LlmOptionsAPI.LlmOptionListResponse;
 }

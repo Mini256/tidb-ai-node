@@ -1,14 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
-import * as UsersAPI from './users';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as MeAPI from './me';
 
-export class Users extends APIResource {
+export class Me extends APIResource {
   /**
    * Me
    */
-  retrieveMe(options?: Core.RequestOptions): Core.APIPromise<UserRead> {
+  retrieve(options?: Core.RequestOptions): Core.APIPromise<UserRead> {
     return this._client.get('/api/v1/users/me', options);
   }
 }
@@ -25,6 +25,6 @@ export interface UserRead {
   is_verified?: boolean;
 }
 
-export namespace Users {
-  export import UserRead = UsersAPI.UserRead;
+export namespace Me {
+  export import UserRead = MeAPI.UserRead;
 }

@@ -3,7 +3,6 @@
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
 import * as UploadsAPI from './uploads';
-import * as AdminsUploadsAPI from '../admins/uploads';
 
 export class Uploads extends APIResource {
   /**
@@ -14,13 +13,32 @@ export class Uploads extends APIResource {
   }
 }
 
-export type UploadCreateResponse = Array<AdminsUploadsAPI.Upload>;
+export interface Upload {
+  name: string;
+
+  path: string;
+
+  user_id: string;
+
+  id?: number | null;
+
+  created_at?: string | null;
+
+  mime_type?: string;
+
+  size?: number;
+
+  updated_at?: string | null;
+}
+
+export type UploadCreateResponse = Array<Upload>;
 
 export interface UploadCreateParams {
   files: Array<Core.Uploadable>;
 }
 
 export namespace Uploads {
+  export import Upload = UploadsAPI.Upload;
   export import UploadCreateResponse = UploadsAPI.UploadCreateResponse;
   export import UploadCreateParams = UploadsAPI.UploadCreateParams;
 }

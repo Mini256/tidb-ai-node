@@ -6,13 +6,6 @@ import * as AuthAPI from './auth';
 
 export class Auth extends APIResource {
   /**
-   * Create Api Key
-   */
-  createAPIKey(body: AuthCreateAPIKeyParams, options?: Core.RequestOptions): Core.APIPromise<unknown> {
-    return this._client.post('/api/v1/create-api-key', { body, ...options });
-  }
-
-  /**
    * Auth:Database.Login
    */
   login(body: AuthLoginParams, options?: Core.RequestOptions): Core.APIPromise<unknown> {
@@ -31,15 +24,9 @@ export class Auth extends APIResource {
   }
 }
 
-export type AuthCreateAPIKeyResponse = unknown;
-
 export type AuthLoginResponse = unknown;
 
 export type AuthLogoutResponse = unknown;
-
-export interface AuthCreateAPIKeyParams {
-  description: string;
-}
 
 export interface AuthLoginParams {
   password: string;
@@ -56,9 +43,7 @@ export interface AuthLoginParams {
 }
 
 export namespace Auth {
-  export import AuthCreateAPIKeyResponse = AuthAPI.AuthCreateAPIKeyResponse;
   export import AuthLoginResponse = AuthAPI.AuthLoginResponse;
   export import AuthLogoutResponse = AuthAPI.AuthLogoutResponse;
-  export import AuthCreateAPIKeyParams = AuthAPI.AuthCreateAPIKeyParams;
   export import AuthLoginParams = AuthAPI.AuthLoginParams;
 }

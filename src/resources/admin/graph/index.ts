@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
+  EntityPublic,
   EntitySearchResponse,
   EntitySubgraphResponse,
   EntityUpdateParams,
@@ -9,4 +10,4 @@ export {
   Entities,
 } from './entities';
 export { GraphSearchResponse, GraphSearchParams, Graph } from './graph';
-export { RelationshipUpdateParams, Relationships } from './relationships';
+export { RelationshipPublic, RelationshipUpdateParams, Relationships } from './relationships';

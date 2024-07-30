@@ -3,13 +3,12 @@
 import { APIResource } from '../../../resource';
 import * as Core from '../../../core';
 import * as EntitiesAPI from './entities';
-import * as GraphEntitiesAPI from '../../admins/graph/entities';
 
 export class Entities extends APIResource {
   /**
    * Get Entity
    */
-  retrieve(entityId: number, options?: Core.RequestOptions): Core.APIPromise<GraphEntitiesAPI.EntityPublic> {
+  retrieve(entityId: number, options?: Core.RequestOptions): Core.APIPromise<EntityPublic> {
     return this._client.get(`/api/v1/admin/graph/entities/${entityId}`, options);
   }
 
@@ -20,7 +19,7 @@ export class Entities extends APIResource {
     entityId: number,
     body: EntityUpdateParams,
     options?: Core.RequestOptions,
-  ): Core.APIPromise<GraphEntitiesAPI.EntityPublic> {
+  ): Core.APIPromise<EntityPublic> {
     return this._client.put(`/api/v1/admin/graph/entities/${entityId}`, { body, ...options });
   }
 
@@ -41,15 +40,26 @@ export class Entities extends APIResource {
   /**
    * Create Synopsis Entity
    */
-  synopsis(
-    body: EntitySynopsisParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<GraphEntitiesAPI.EntityPublic> {
+  synopsis(body: EntitySynopsisParams, options?: Core.RequestOptions): Core.APIPromise<EntityPublic> {
     return this._client.post('/api/v1/admin/graph/entities/synopsis', { body, ...options });
   }
 }
 
-export type EntitySearchResponse = Array<GraphEntitiesAPI.EntityPublic>;
+export interface EntityPublic {
+  id: number;
+
+  description: string;
+
+  name: string;
+
+  entity_type?: 'original' | 'synopsis';
+
+  meta?: Array<unknown> | unknown;
+
+  synopsis_info?: Array<unknown> | unknown | null;
+}
+
+export type EntitySearchResponse = Array<EntityPublic>;
 
 export type EntitySubgraphResponse = unknown;
 
@@ -80,6 +90,7 @@ export interface EntitySynopsisParams {
 }
 
 export namespace Entities {
+  export import EntityPublic = EntitiesAPI.EntityPublic;
   export import EntitySearchResponse = EntitiesAPI.EntitySearchResponse;
   export import EntitySubgraphResponse = EntitiesAPI.EntitySubgraphResponse;
   export import EntityUpdateParams = EntitiesAPI.EntityUpdateParams;
