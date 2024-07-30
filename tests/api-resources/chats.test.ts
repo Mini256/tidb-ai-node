@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from 'tidb-ai';
+import TidbAI from '@tidb-ai/sdk';
 import { Response } from 'node-fetch';
 
 const client = new TidbAI({

@@ -1,5 +1,5 @@
 {
-  "name": "tidb-ai",
+  "name": "@tidb-ai/sdk",
   "version": "0.0.1-alpha.1",
   "description": "The official TypeScript library for the Tidb AI API",
   "author": "Tidb AI <dev-feedback@tidb-ai.com>",
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "tidb-ai": ".",
-    "tidb-ai/*": "./src/*"
+    "@tidb-ai/sdk": ".",
+    "@tidb-ai/sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

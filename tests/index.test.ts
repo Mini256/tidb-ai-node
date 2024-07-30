@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TidbAI from 'tidb-ai';
-import { APIUserAbortError } from 'tidb-ai';
-import { Headers } from 'tidb-ai/core';
+import TidbAI from '@tidb-ai/sdk';
+import { APIUserAbortError } from '@tidb-ai/sdk';
+import { Headers } from '@tidb-ai/sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "tidb-ai/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "tidb-ai/*": ["src/*"],
-      "tidb-ai": ["src/index.ts"],
+      "@tidb-ai/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@tidb-ai/sdk/*": ["src/*"],
+      "@tidb-ai/sdk": ["src/index.ts"],
     },
     "noEmit": true,
 
