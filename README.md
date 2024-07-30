@@ -1,6 +1,6 @@
 # Tidb AI Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@tidb-ai/client.svg)](https://npmjs.org/package/@tidb-ai/client) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@tidb-ai/client)
+[![NPM version](https://img.shields.io/npm/v/@tidb-ai/sdk.svg)](https://npmjs.org/package/@tidb-ai/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@tidb-ai/sdk)
 
 This library provides convenient access to the Tidb AI REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install @tidb-ai/client
+npm install @tidb-ai/sdk
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import TidbAI from '@tidb-ai/client';
+import TidbAI from '@tidb-ai/sdk';
 
 const client = new TidbAI();
 
@@ -37,7 +37,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import TidbAI from '@tidb-ai/client';
+import TidbAI from '@tidb-ai/sdk';
 
 const client = new TidbAI();
 
@@ -207,11 +207,11 @@ add the following import before your first import `from "TidbAI"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import '@tidb-ai/client/shims/web';
-import TidbAI from '@tidb-ai/client';
+import '@tidb-ai/sdk/shims/web';
+import TidbAI from '@tidb-ai/sdk';
 ```
 
-To do the inverse, add `import "@tidb-ai/client/shims/node"` (which does import polyfills).
+To do the inverse, add `import "@tidb-ai/sdk/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/Mini256/tidb-ai-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -221,7 +221,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import TidbAI from '@tidb-ai/client';
+import TidbAI from '@tidb-ai/sdk';
 
 const client = new TidbAI({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

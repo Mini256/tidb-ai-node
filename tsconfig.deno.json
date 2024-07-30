@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "@tidb-ai/client/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "@tidb-ai/client/*": ["deno/*"],
-      "@tidb-ai/client": ["deno/index.ts"],
+      "@tidb-ai/sdk/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "@tidb-ai/sdk/*": ["deno/*"],
+      "@tidb-ai/sdk": ["deno/index.ts"],
     },
     "noEmit": true,
     "declaration": true,

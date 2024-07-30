@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^@tidb-ai/client$': '<rootDir>/src/index.ts',
-    '^@tidb-ai/client/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^@tidb-ai/client/(.*)$': '<rootDir>/src/$1',
+    '^@tidb-ai/sdk$': '<rootDir>/src/index.ts',
+    '^@tidb-ai/sdk/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^@tidb-ai/sdk/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',
