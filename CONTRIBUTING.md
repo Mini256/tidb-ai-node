@@ -55,12 +55,12 @@ cd tidb-ai-node
 # With yarn
 yarn link
 cd ../my-package
-yarn link @tidb-ai/client
+yarn link @tidb-ai/sdk
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global @tidb-ai/client
+pnpm link -—global @tidb-ai/sdk
 ```
 
 ## Running tests
