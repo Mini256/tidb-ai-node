@@ -205,11 +205,6 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/admin/llm-options.ts">LlmOption</a></code>
-- <code><a href="./src/resources/admin/llm-options.ts">LlmOptionListResponse</a></code>
-
-Methods:
-
-- <code title="get /api/v1/admin/llm-options">client.admin.llmOptions.<a href="./src/resources/admin/llm-options.ts">list</a>() -> LlmOptionListResponse</code>
 
 ## Llms
 

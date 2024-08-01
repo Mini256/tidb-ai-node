@@ -27,7 +27,7 @@ export {
   Datasources,
 } from './datasources';
 export { GraphSearchResponse, GraphSearchParams, Graph } from './graph/index';
-export { LlmOption, LlmOptionListResponse, LlmOptions } from './llm-options';
+export { LlmOption, LlmOptions } from './llm-options';
 export { PageAdminFeedbackPublic, FeedbackListParams, Feedbacks } from './feedbacks';
 export { PageDocument, DocumentListParams, Documents } from './documents';
 export { RagIndexProgressResponse, Rag } from './rag';
