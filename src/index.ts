@@ -205,8 +205,6 @@ export namespace TidbAI {
   export import Users = API.Users;
 
   export import APIKeys = API.APIKeys;
-  export import APIKeyCreateResponse = API.APIKeyCreateResponse;
-  export import APIKeyCreateParams = API.APIKeyCreateParams;
 
   export import Admin = API.Admin;
 
