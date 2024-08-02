@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { APIKeyCreateResponse, APIKeyCreateParams, APIKeys } from './api-keys';
+export { APIKeys } from './api-keys';
 export { Admin } from './admin/admin';
 export { AuthLoginResponse, AuthLogoutResponse, AuthLoginParams, Auth } from './auth';
 export { ChatMessages } from './chat-messages/chat-messages';

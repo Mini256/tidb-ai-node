@@ -70,14 +70,6 @@ Methods:
 
 # APIKeys
 
-Types:
-
-- <code><a href="./src/resources/api-keys.ts">APIKeyCreateResponse</a></code>
-
-Methods:
-
-- <code title="post /api/v1/create-api-key">client.apiKeys.<a href="./src/resources/api-keys.ts">create</a>({ ...params }) -> unknown</code>
-
 # Admin
 
 ## Rag
