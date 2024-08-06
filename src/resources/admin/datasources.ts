@@ -48,6 +48,8 @@ export interface DataSource {
 
   description: string;
 
+  llm_id: number | null;
+
   name: string;
 
   user_id: string;
@@ -87,6 +89,8 @@ export interface DatasourceCreateParams {
   name: string;
 
   build_kg_index?: boolean;
+
+  llm_id?: number | null;
 }
 
 export interface DatasourceListParams {
