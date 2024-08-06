@@ -32,6 +32,7 @@ describe('resource datasources', () => {
       description: 'description',
       name: 'name',
       build_kg_index: true,
+      llm_id: 0,
     });
   });
 
