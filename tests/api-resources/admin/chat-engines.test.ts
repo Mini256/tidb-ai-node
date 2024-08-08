@@ -10,7 +10,12 @@ const client = new TidbAI({
 
 describe('resource chatEngines', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.admin.chatEngines.create({ fast_llm_id: 0, llm_id: 0, name: 'name' });
+    const responsePromise = client.admin.chatEngines.create({
+      fast_llm_id: 0,
+      llm_id: 0,
+      name: 'name',
+      reranker_id: 0,
+    });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -25,6 +30,7 @@ describe('resource chatEngines', () => {
       fast_llm_id: 0,
       llm_id: 0,
       name: 'name',
+      reranker_id: 0,
       id: 0,
       created_at: '2019-12-27T18:11:19.117Z',
       deleted_at: '2019-12-27T18:11:19.117Z',
