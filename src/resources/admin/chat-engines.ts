@@ -61,6 +61,8 @@ export interface ChatEngine {
 
   name: string;
 
+  reranker_id: number | null;
+
   id?: number | null;
 
   created_at?: string | null;
@@ -93,6 +95,8 @@ export interface ChatEngineCreateParams {
 
   name: string;
 
+  reranker_id: number | null;
+
   id?: number | null;
 
   created_at?: string | null;
@@ -116,6 +120,8 @@ export interface ChatEngineUpdateParams {
   llm_id?: number | null;
 
   name?: string | null;
+
+  reranker_id?: number | null;
 }
 
 export interface ChatEngineListParams {
