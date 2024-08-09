@@ -19,6 +19,12 @@ export interface LlmOption {
   credentials_type?: string;
 
   default_credentials?: string | unknown;
+
+  provider_description?: string | null;
+
+  provider_display_name?: string | null;
+
+  provider_url?: string | null;
 }
 
 export namespace LlmOptions {
