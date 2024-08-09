@@ -70,14 +70,6 @@ Methods:
 
 # APIKeys
 
-Types:
-
-- <code><a href="./src/resources/api-keys.ts">APIKeyCreateResponse</a></code>
-
-Methods:
-
-- <code title="post /api/v1/create-api-key">client.apiKeys.<a href="./src/resources/api-keys.ts">create</a>({ ...params }) -> unknown</code>
-
 # Admin
 
 ## Rag
@@ -205,11 +197,6 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/admin/llm-options.ts">LlmOption</a></code>
-- <code><a href="./src/resources/admin/llm-options.ts">LlmOptionListResponse</a></code>
-
-Methods:
-
-- <code title="get /api/v1/admin/llm-options">client.admin.llmOptions.<a href="./src/resources/admin/llm-options.ts">list</a>() -> LlmOptionListResponse</code>
 
 ## Llms
 

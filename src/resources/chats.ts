@@ -57,6 +57,8 @@ export interface PageChat {
 
 export namespace PageChat {
   export interface Item {
+    browser_id: string;
+
     engine_id: number;
 
     title: string;

@@ -59,7 +59,6 @@ export namespace Admin {
   export import DatasourceListParams = DatasourcesAPI.DatasourceListParams;
   export import LlmOptions = LlmOptionsAPI.LlmOptions;
   export import LlmOption = LlmOptionsAPI.LlmOption;
-  export import LlmOptionListResponse = LlmOptionsAPI.LlmOptionListResponse;
   export import Llms = LlmsAPI.Llms;
   export import AdminLlm = LlmsAPI.AdminLlm;
   export import LlmTestResult = LlmsAPI.LlmTestResult;

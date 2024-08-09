@@ -35,6 +35,10 @@ export interface RelationshipPublic {
 
   target_entity_id: number;
 
+  chunk_id?: string | null;
+
+  document_id?: number | null;
+
   meta?: Array<unknown> | unknown;
 
   weight?: number;

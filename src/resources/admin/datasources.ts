@@ -48,6 +48,8 @@ export interface DataSource {
 
   description: string;
 
+  llm_id: number | null;
+
   name: string;
 
   user_id: string;
@@ -59,6 +61,8 @@ export interface DataSource {
   config?: unknown | Array<unknown>;
 
   created_at?: string | null;
+
+  deleted_at?: string | null;
 
   updated_at?: string | null;
 }
@@ -87,6 +91,8 @@ export interface DatasourceCreateParams {
   name: string;
 
   build_kg_index?: boolean;
+
+  llm_id?: number | null;
 }
 
 export interface DatasourceListParams {

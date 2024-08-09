@@ -1,37 +1,32 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
-import * as Core from '../../core';
 import * as LlmOptionsAPI from './llm-options';
 
-export class LlmOptions extends APIResource {
-  /**
-   * Get Llm Options
-   */
-  list(options?: Core.RequestOptions): Core.APIPromise<LlmOptionListResponse> {
-    return this._client.get('/api/v1/admin/llm-options', options);
-  }
-}
+export class LlmOptions extends APIResource {}
 
 export interface LlmOption {
   credentials_description: string;
 
   credentials_display_name: string;
 
-  default_model: string;
+  default_llm_model: string;
 
-  model_description: string;
+  llm_model_description: string;
 
-  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like' | 'bedrock';
 
   credentials_type?: string;
 
   default_credentials?: string | unknown;
-}
 
-export type LlmOptionListResponse = Array<LlmOption>;
+  provider_description?: string | null;
+
+  provider_display_name?: string | null;
+
+  provider_url?: string | null;
+}
 
 export namespace LlmOptions {
   export import LlmOption = LlmOptionsAPI.LlmOption;
-  export import LlmOptionListResponse = LlmOptionsAPI.LlmOptionListResponse;
 }
