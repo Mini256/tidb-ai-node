@@ -14,7 +14,7 @@ export interface LlmOption {
 
   llm_model_description: string;
 
-  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like' | 'bedrock';
 
   credentials_type?: string;
 
