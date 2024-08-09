@@ -57,7 +57,7 @@ export interface AdminLlm {
 
   name: string;
 
-  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like' | 'bedrock';
 
   config?: unknown | Array<unknown> | null;
 
@@ -93,7 +93,7 @@ export interface LlmCreateParams {
 
   name: string;
 
-  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like' | 'bedrock';
 
   id?: number | null;
 
@@ -119,7 +119,7 @@ export interface LlmTestParams {
 
   name: string;
 
-  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like';
+  provider: 'openai' | 'gemini' | 'anthropic_vertex' | 'openai_like' | 'bedrock';
 
   id?: number | null;
 
